@@ -6,7 +6,7 @@
 # You can read more about plan policies here:
 #
 # https://docs.spacelift.io/concepts/policy/terraform-plan-policy
-resource "spacelift_policy" "plan" {
+resource "spacelift_policy" "plan-that-prevents-creating-weak-passwords" {
   type = "TERRAFORM_PLAN"
 
   name = "Enforce password strength"
