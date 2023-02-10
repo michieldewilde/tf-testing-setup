@@ -1,5 +1,5 @@
 resource "spacelift_stack" "managed" {
-  name        = "Managed stack"
+  name        = "Managed stack ${random_pet.stack-name-postfix.id}"
   description = "Your first stack managed by Terraform"
 
   repository   = "terraform-starter"
@@ -31,6 +31,8 @@ resource "random_password" "stack-password" {
   length  = 10
   special = false
 }
+
+resource "random_pet" "stack-name-postfix" {}
 
 # This is a secret environment variable. Note how we didn't set the write_only
 # bit at all here. This setting always defaults to "true" to protect you against
