@@ -93,7 +93,7 @@
    type = map(string)
 
    default = {
-     "foo"     = "bar"
+     "foo"     = "bacon"
      "this_is" = "unsanitized"
    }
  }
