@@ -2,7 +2,7 @@ resource "spacelift_stack" "managed" {
   name        = "Managed stack ${random_pet.stack-name-postfix.id}"
   description = "Your first stack managed by Terraform"
 
-  repository   = "terraform-starter"
+  repository   = "terraform-test"
   branch       = "main"
   project_root = "managed-stack"
 
