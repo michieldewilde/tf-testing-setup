@@ -98,12 +98,12 @@ resource "spacelift_mounted_file" "stack-secret-file" {
    }
  }
 
- resource "random_password" "password" {
+ resource "random_password" "password-moved" {
    length = 26
  }
 
  output "sensitive_output" {
-   value     = random_password.password.result
+   value     = random_password.password-moved.result
    sensitive = true
  }
 
@@ -133,4 +133,9 @@ resource "spacelift_mounted_file" "stack-secret-file" {
    value     = var.non_sensitive_variable
    sensitive = false
  }
+
+moved {
+  from = random_password.password
+  to   = random_password.password-moved
+}
 
